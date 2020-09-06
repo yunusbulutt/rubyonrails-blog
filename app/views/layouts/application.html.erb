@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
+
+<head>
+    <title>Yunus Bulut | Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css2?family=Grandstander:wght@100;300&family=Open+Sans:wght@300&display=swap' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+    <div id="sidebar">
+
+        <ul>
+            <li class="category">Yunus Bulut</li>
+            <li><%= link_to "Blog", root_path %></li>
+            <li>Hakkımda</li>
+        </ul>
+
+        <ul>
+            <li class="category">İletişim</li>
+            <li><a href="https://twitter.com/yunusbulutt" target="_blank">Twitter</a></li>
+            <li><a href="http://instagram.com/yunus.bulutt" target="_blank">Instagram</a></li>
+            <li><a href="https://github.com/yunusbulutt" target="_blank">Github</a></li>
+            <li><a href="mailto:bulutt1404@gmail.com" target="_blank">Email</a></li>
+            <li><a href="https://t.me/yunusbulut" target="_blank">Telegram</a></li>
+        </ul>
+
+        <p class="sign_in">Yönetici Girişi</p>
+
+    </div>
+    <div id="main_content">
+        <div id="header">
+            <p>Tüm Yazılar</p>
+            <div class="buttons">
+                <button class="button"><%= link_to "Yazı Ekle", new_post_path %></button>
+                <button class="button">Çıkış</button>
+            </div>
+        </div>
+
+        <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert") %>
+        <% end %>
+
+        <%= yield %>
+    </div>
+
+</body>
+
 </html>

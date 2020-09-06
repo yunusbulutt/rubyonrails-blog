@@ -1,9 +1,9 @@
-<h1 class="title">
-    <%= @post.title %>
-</h1>
-<p class="date">
-    <%= time_ago_in_words(@post.created_at) %> önce gönderildi.
-</p>
-<p class="blog">
-    <%= @post.body %>
-</p>
+<div id="post_content">
+    <h1 class="title">
+        <%= @post.title %>
+    </h1>
+    <p class="date"><%=l @post.created_at, format: :long , :locale => 'tr' %>, tarihinde yazıldı.</p>
+    <p class="blog">
+        <%= @post.body %>
+    </p>
+</div>
