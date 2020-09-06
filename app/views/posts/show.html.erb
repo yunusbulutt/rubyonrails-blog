@@ -1,0 +1,9 @@
+<h1 class="title">
+    <%= @post.title %>
+</h1>
+<p class="date">
+    <%= time_ago_in_words(@post.created_at) %> önce gönderildi.
+</p>
+<p class="blog">
+    <%= @post.body %>
+</p>
