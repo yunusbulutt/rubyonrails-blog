@@ -6,9 +6,10 @@
     </div>
 
 
+    <% if user_signed_in? %>
     <p><%= link_to 'Sil', [comment.post, comment],
 								method: :delete,
 								class: "button",
 								data: { confirm: 'Silmek İstediğinize Emin Misiniz ?' } %></p>
-
+    <% end %>
 </div>
