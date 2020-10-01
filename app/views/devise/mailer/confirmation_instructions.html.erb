@@ -1,5 +1,5 @@
-<p>Welcome <%= @email %>!</p>
+<p>Hoşgeldniz<%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Hesap e-postanızı aşağıdaki bağlantı üzerinden onaylayabilirsiniz:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
